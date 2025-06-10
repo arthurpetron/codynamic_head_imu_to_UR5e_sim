@@ -48,10 +48,10 @@ codynamic_simulator/
 │   └── test_simulator.py
 ```
 Each layer has one job:
-	•	core/: Defines what a codynamic system is — not how it’s implemented
-	•	implementations/: Algorithmic primitives for filtering and estimation
-	•	inputs/: Time-stamped sensor sources
-	•	systems/: Compose a full inference-actuation loop
+	- core/: Defines what a codynamic system is — not how it’s implemented
+	- implementations/: Algorithmic primitives for filtering and estimation
+	- inputs/: Time-stamped sensor sources
+	- systems/: Compose a full inference-actuation loop
 
 ⸻
 
@@ -70,19 +70,19 @@ class CodynamicSimulator:
         """Emit current predicted output for actuation, aware of uncertainty."""
 
 This protocol allows the simulator to:
-	•	Deal with asynchronous, delayed, or contradictory sensor data
-	•	Adapt its structural understanding over time
-	•	Maintain multiple hypotheses and collapse based on causal consistency
+	- Deal with asynchronous, delayed, or contradictory sensor data
+	- Adapt its structural understanding over time
+	- Maintain multiple hypotheses and collapse based on causal consistency
 
 ⸻
 
 ## Application: Head-Controlled UR5e Arm
 
 The primary system implemented here uses:
-	•	IMU orientation data from a headset
-	•	To control the TCP (Tool Center Point) of a UR5e arm
-	•	With spring-back behavior for yaw and spherical radial control
-	•	Ensuring the TCP’s Z-axis remains normal to the control sphere
+	- IMU orientation data from a headset
+	- To control the TCP (Tool Center Point) of a UR5e arm
+	- With spring-back behavior for yaw and spherical radial control
+	- Ensuring the TCP’s Z-axis remains normal to the control sphere
 
 This enables intuitive teleoperation with physically grounded logic, suitable for real-world embodied agents.
 
@@ -91,10 +91,10 @@ This enables intuitive teleoperation with physically grounded logic, suitable fo
 ## Testability
 
 Every module is fully testable in isolation. The architecture was designed to support:
-	•	Sensor stubbing
-	•	Historical replay
-	•	Deterministic consistency checks
-	•	Plug-and-play estimator swaps
+	- Sensor stubbing
+	- Historical replay
+	- Deterministic consistency checks
+	- Plug-and-play estimator swaps
 
 Run tests with:
 
@@ -107,9 +107,9 @@ pytest tests/
 This simulator is a substrate for modeling process, not just physics.
 
 It’s designed to grow into:
-	•	A general-purpose framework for recursive perception-action cycles
-	•	A platform for modeling systems where structure is not fixed, but emerges through interaction
-	•	A tool for embedding duronic logic—the idea that decisions arise in time’s extended now, not a discrete tick
+	- A general-purpose framework for recursive perception-action cycles
+	- A platform for modeling systems where structure is not fixed, but emerges through interaction
+	- A tool for embedding duronic logic—the idea that decisions arise in time’s extended now, not a discrete tick
 
 ⸻
 

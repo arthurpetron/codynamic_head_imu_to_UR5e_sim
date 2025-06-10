@@ -46,7 +46,7 @@ codynamic_simulator/
 │
 ├── tests/               # Unit and integration tests
 │   └── test_simulator.py
-
+```
 Each layer has one job:
 	•	core/: Defines what a codynamic system is — not how it’s implemented
 	•	implementations/: Algorithmic primitives for filtering and estimation

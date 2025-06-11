@@ -48,6 +48,7 @@ codynamic_simulator/
 │   └── test_simulator.py
 ```
 Each layer has one job:
+
 	- core/: Defines what a codynamic system is — not how it’s implemented
 	- implementations/: Algorithmic primitives for filtering and estimation
 	- inputs/: Time-stamped sensor sources
@@ -79,6 +80,7 @@ This protocol allows the simulator to:
 ## Application: Head-Controlled UR5e Arm
 
 The primary system implemented here uses:
+
 	- IMU orientation data from a headset
 	- To control the TCP (Tool Center Point) of a UR5e arm
 	- With spring-back behavior for yaw and spherical radial control
@@ -91,6 +93,7 @@ This enables intuitive teleoperation with physically grounded logic, suitable fo
 ## Testability
 
 Every module is fully testable in isolation. The architecture was designed to support:
+
 	- Sensor stubbing
 	- Historical replay
 	- Deterministic consistency checks
@@ -107,6 +110,7 @@ pytest tests/
 This simulator is a substrate for modeling process, not just physics.
 
 It’s designed to grow into:
+
 	- A general-purpose framework for recursive perception-action cycles
 	- A platform for modeling systems where structure is not fixed, but emerges through interaction
 	- A tool for embedding duronic logic—the idea that decisions arise in time’s extended now, not a discrete tick
